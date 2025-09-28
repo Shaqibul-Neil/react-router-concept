@@ -1,7 +1,7 @@
 const Laptops = () => {
   return (
-    <div>
-      <h2>This is laptops</h2>
+    <div className="text-center">
+      <h2 className="text-error">This is laptops</h2>
     </div>
   );
 };

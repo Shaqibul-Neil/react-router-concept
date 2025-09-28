@@ -1,7 +1,7 @@
 const Mobiles = () => {
   return (
-    <div>
-      <h2>This is mobile</h2>
+    <div className="text-center">
+      <h2 className="text-warning">This is mobile</h2>
     </div>
   );
 };
