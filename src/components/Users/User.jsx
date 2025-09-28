@@ -1,7 +1,16 @@
+import { Suspense, useState } from "react";
 import { Link, useLoaderData } from "react-router";
+import UserDetails2 from "../UserDetails2/UserDetails2";
+
+const userPromise = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users/`);
+  return res.json();
+};
 
 const User = () => {
+  const [showInfo, setShowInfo] = useState(false);
   const users = useLoaderData();
+  const fetchPromise = userPromise();
   // console.log(users);
   return (
     <div>
@@ -15,6 +24,17 @@ const User = () => {
             <Link to={`/users/${user.id}`} className="text-primary">
               Show Details
             </Link>
+            <button
+              className="btn btn-secondary"
+              onClick={() => setShowInfo(!showInfo)}
+            >
+              {showInfo ? "Hide" : "Show"} info
+            </button>
+            {showInfo && (
+              <Suspense fallback={<span>Loading....</span>}>
+                <UserDetails2 fetchPromise={fetchPromise} />
+              </Suspense>
+            )}
           </div>
         ))}
       </div>

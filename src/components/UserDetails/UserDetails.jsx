@@ -5,7 +5,7 @@ const UserDetails = () => {
   // console.log(userDetail);
   // const params = useParams();
   // console.log(params.userId);
-  const { userId } = useParams();
+  // const {userId} = useParams()
   return (
     <div className="mt-5 border p-4">
       <h2>Name: {userDetail.name}</h2>
