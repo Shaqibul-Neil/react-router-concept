@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="text-center">
       <h3 className="text-3xl font-bold">This is Header</h3>
-      <nav className="flex gap-2 font-medium text-primary w-80 mx-auto">
+      <nav className="flex gap-2 font-medium text-primary">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/mobiles">Mobiles</NavLink>
         <NavLink to="/laptops">Laptops</NavLink>
