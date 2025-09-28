@@ -1,6 +1,8 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigation } from "react-router";
 
 const Header = () => {
+  const pending = useNavigation();
+
   return (
     <div className="text-center">
       <h3 className="text-3xl font-bold">This is Header</h3>
@@ -18,6 +20,7 @@ const Header = () => {
         <a href="/mobiles">Mobiles</a>
         <a href="/laptops">Laptops</a> */}
       </nav>
+      {pending.state === "loading" && <span>⌛ Page is Loading.....</span>}
     </div>
   );
 };
